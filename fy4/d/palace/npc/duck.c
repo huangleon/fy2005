@@ -1,0 +1,14 @@
+
+inherit NPC;
+
+void create()
+{
+        set_name("Ò°Ñ¼", ({ "duck" }) );
+        set("race", "·ÉÇÝ");
+        set("age", 5);
+        set("long", "Ò»Í·Ò°Í·Ò°ÄÔµÄÒ°Ñ¼×Ó¡£ \n");
+		set("combat_exp",2000);
+        set_skill("dodge", 80);
+
+        setup();
+}

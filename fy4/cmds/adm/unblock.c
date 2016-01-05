@@ -1,0 +1,50 @@
+#include <login.h>;
+inherit F_CLEAN_UP;
+
+void create()
+{
+        seteuid(getuid());
+}
+
+int main(object me, string arg)
+{
+        object ob,link_ob;
+        string id,password;
+
+        if(!arg)
+                return notify_fail("«Î”√help≤Èø¥¥À÷∏¡Ó”√∑®£°\n");
+        ob=find_player(arg);
+        if(ob)
+			return notify_fail("¥À÷∏¡Ó÷ªƒ‹∂‘¿ÎœﬂÕÊº“ π”√°£\n");
+
+		ob = FINGER_D->acquire_login_ob(arg);
+    	
+        if(!ob)
+             return notify_fail("√ª”–’‚∏ˆÕÊº“°£\n");
+			
+		if (!ob->query("blocked"))
+             return notify_fail("’‚∏ˆÕÊº“≤ª–Ë“™÷¥––Ω‚À¯≤Ÿ◊˜°£\n");
+	
+		ob->delete("blocked");
+		ob->save();
+		destruct(ob);
+		write("UNBLOCK ÕÍ±œ Ok.\n");
+		
+        return 1;
+}
+
+
+int help(object me)
+{
+        write(@HELP
+[0;1;37m©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§[0m
+[0;1;36mŒ◊ ¶÷∏¡Ó∏Ò Ω : 	unblock ID[0m
+[0;1;37m©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§[0m   
+
+’‚∏ˆ÷∏¡Ó”√“‘Ω‚≥˝±ªœµÕ≥Ω˚”√µƒÕÊº“’ ∫≈°£
+
+[0;1;37m©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§[0m 
+HELP
+    );
+    return 1;
+}

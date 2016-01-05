@@ -1,0 +1,180 @@
+#include <ansi.h>
+
+inherit ROOM;
+void create()
+{
+        set("short", "∑Á‘∆—√√≈");
+        set("long", @LONG
+’‚¿Ô «≥ØÕ¢À˘…Ë£¨∏ΩΩ¸≥«¿Ôµƒæ¿∑◊∂ºø…“‘‘⁄’‚¿Ô…œ◊¥«Î«Û¥¶¿Ì°£¥ÛÃ¸ƒœ ◊“ª’≈
+æÌÈ‹ƒæ∞∏£¨∞∏…œ”–∏ˆ–°÷ÒÕ∞£¨¿Ô√Ê≤Â◊≈º∏∏˘”–÷™∏ÆπŸ”°µƒ÷Ò«©°£ƒæ∞∏∫ÛµƒÃ´ ¶“Œ…œ
+∆Ã◊≈—©»ﬁ∆§£¨“Œ∫Û∆¡∑Á…œ∫Ï»’«‡‘∆Õº°£…œ–¸Ω±ﬂÿ“£∫
+[0;1;33m
+				√˜≤Ï«Ô∫¡
+[0m
+LONG
+        );
+    	set("exits", ([ /* sizeof() == 4 */
+        	"north" : __DIR__"street5",
+        	"south" : __DIR__"shufang",
+        	"west" : __DIR__"w_xiangfang",
+        	"east" : __DIR__"e_xiangfang",
+    	]));
+    	set("objects", ([
+		__DIR__"npc/yayi0" : 1,
+        	__DIR__"npc/yayi1" : 2,
+        	__DIR__"npc/yayi" : 2,
+        	__DIR__"npc/yayi2" : 2,
+    	]) );
+	set("coor/x",0);
+	set("coor/y",10);
+	set("coor/z",0);
+	setup();
+
+}
+
+/*
+void init()
+{
+	object xing;
+	mixed *current_time;
+	
+	add_action("do_arrest","arrest");	
+	if (!interactive(this_player()))	return ;
+		
+	current_time=NATURE_D->get_current_time();
+	if(xing=present("xing rui",this_object()))
+	{
+		if(current_time[5]<480||current_time[5]>1200)
+		{
+			message_vision(CYN"–œ»Ò∫ˆ»ª”–»Á¥Û√Œ≥ı–—“ª∞„£¨Àµµ¿£∫°∞‘≠¿¥∂º’‚√¥“π¡À£¨ «ªÿº“µƒ ±∫Ú¡À°£°±\n"NOR,xing);
+			message_vision(CYN"–œ»Ò¬˝¬˝µƒ◊ﬂ¡À≥ˆ»•°£\n"NOR,xing);
+			destruct(xing);
+		}
+		else if(current_time[5]>1080)
+		{
+			message_vision(CYN"–œ»Ò≈ƒ≈ƒºÁ∞ÚÀµµ¿£∫°∞Ã´ÕÌ¡À£¨”– ¬√˜ÃÏ‘Ÿ¿¥∞…°£°±\n"NOR,xing);
+			message_vision(CYN"–œ»Ò◊‘—‘◊‘”Ôµ¿£∫°∞»•∫ÕΩ≠ ¶“Ø∫»¡Ω÷—∞…°£°±◊™…Ì¿Îø™°£\n"NOR,xing);
+			destruct(xing);
+		}
+	}
+	else
+		if(current_time[5]>480&&current_time[5]<960)
+		{
+			xing=new(__DIR__"npc/xing");
+			xing->move(this_object());
+			message_vision(YEL"–œ»ÒµÕ…˘µƒÀµµ¿£∫°∞…˝°´°´°´°´Ã√°´°´°´°´°±\n"NOR,xing);
+		}
+	
+}
+
+int do_arrest(string arg)
+{
+	
+	object me, target,xing;
+	int exp, stra,leader,factor,mysen;
+	if(!arg)
+		return notify_fail("ƒ„“™œ¬¡Óº©ƒ√À≠£ø\n");
+	me = this_player();
+	if((string) me->query("class") != "official" )
+		return notify_fail("ƒ„≤ª «≥ØÕ¢πŸ‘±£¨≤ªø…º©ƒ√“…∑∏£°\n");
+	if (me->query("marks/πŸ∏Æ/‘¿∑…"))
+        	return notify_fail("ƒ„ «÷∏ª”«ßæ¸ÕÚ¬Ìµƒ¥ÛΩ´£¨◊•∑∏»Àµƒ ¬ªπ «¡Ù∏¯π‹¬…∑®µƒπŸ‘±»•◊ˆ∞…°£\n");
+	
+	xing = present("xing rui",this_object());
+	
+	if(!xing ) 
+		return notify_fail("◊‹≤∂Õ∑≤ª‘⁄£¨Œﬁ∑®œ¬¡Óæ–≤∂∑∏»À°£\n");
+	mysen=(int) me->query("sen");
+	if( mysen< 150 )
+		return notify_fail("ƒ„µƒ–ƒ…Ò≤ªπª£°Œﬁ∑®œ¬æ–≤∂µƒ√¸¡Ó°£\n");	
+	if (me->is_busy())
+		return notify_fail("ƒ„œ÷‘⁄√ªø’£°£°\n");
+	
+	if(!objectp(target = find_living(arg)))
+		return notify_fail("–œ◊‹≤∂Õ∑∂‘ƒ„Àµµ¿£∫°∞–°»ÀŒﬁƒ‹£¨√ª”–πÿ”⁄’‚∏ˆ»ÀµƒœﬂÀ˜£¨Œﬁ∑®æ–≤∂°£°±\n");
+	if( !userp(target) && !environment(target))
+		return notify_fail("–œ◊‹≤∂Õ∑∂‘ƒ„Àµµ¿£∫°∞–°»À√˜≤Ï∞µ∑√£¨¥À»ÀÀ∆∫ı“—«±∑¸∆¿¥¡À£¨’“≤ªµΩœﬂÀ˜£¨µ»–© ±∫Ú‘ŸÀµ∞…°£°±\n");
+	if( userp(target) || !environment(target))
+		return notify_fail("–œ◊‹≤∂Õ∑∂‘ƒ„Àµµ¿£∫°∞«ÎÀ°–°»À∂‡—‘£¨¥À»À≤¢Œﬁπ˝∑∏£¨ªπ «µ√»ƒ»À¥¶«“»ƒ»À∞…°£°±\n");
+	if( target->query("no_arrest") )
+		return notify_fail("–œ◊‹≤∂Õ∑Ãæ¡Àø⁄∆¯Àµ£∫°∞¥À»ÀÀ˘‘⁄÷Æ¥¶≤ª ÙπŸ∏Æπ‹œΩ∑∂Œß£¨”––ƒ«‹‘Ù£¨Œﬁ¡¶ªÿÃÏ∞°°£°±\n");
+	if (target->is_fighting())
+		return notify_fail("–œ◊‹≤∂Õ∑≥¡Àº∆¨øÃÀµ£∫¥À»À“—æ≠”–≥º“’“…œ√≈¡À£¨Œ“√««“æ≤π€∆‰±‰°£\n");
+	if (target->is_vendor()|| target->query("fly_target"))
+		return notify_fail("–œ◊‹≤∂Õ∑ƒ—Œ™µÿÀµ£∫æ–≤∂¥À»À≤ªƒ—£¨÷ª «ø÷≈¬ª·”––Ì∂‡≤ª±„÷Æ¥¶°£\n");
+	if (environment(target)==this_object())
+		return notify_fail("–œ◊‹≤∂Õ∑µ√“‚µÿÀµ£∫–°»À“—æ≠∞—¥À»Àæ–ƒ√πÈ∞∏¡À°£\n");		
+		
+	mysen=mysen*3/100;
+	me->add("sen",-mysen);
+	
+	message_vision("$N¥Û…˘œ¬¡Óµ¿£∫¿¥»Àƒ«£Æ£Æ∞—$n∏¯Œ“ƒ√¿¥£°£°\n",me,target);
+	message_vision("$NÀµµ¿£∫°∞≤∂øÏ∫Œ‘⁄£øªπ≤ªøÏ»•÷¥––"+me->query("name")+"¥Û»Àµƒ√¸¡Ó£°£°°£\n",xing);
+	
+	exp = (int) target->query("combat_exp");
+	stra = (int) me->query_skill("strategy",1);
+	leader = (int) me->query_skill("leadership",1);
+	factor = stra * stra / 10 * leader / 10 * leader / 10;
+	factor += ((int) me->query("combat_exp") - 2000 )/1000;			
+	if( random(factor) <= exp) {
+		me->start_busy(3);
+		return notify_fail("–œ◊‹≤∂Õ∑∂‘ƒ„Àµµ¿£∫°∞–°»ÀŒﬁƒ‹£¨»√"+target->query("name")+"Ã”Õ—¡À£°\n");
+	}
+	
+	me->start_busy(2);
+	call_out("gethim",5,target,me);
+	return 1;
+}
+
+int gethim(object target,object me)
+{
+	if(!target || !me ) return 1;
+	if (target->is_fighting()) {
+		tell_object(me,"–œ◊‹≤∂Õ∑∂‘ƒ„Àµµ¿£∫°∞–°»ÀŒﬁƒ‹£¨»√"+target->query("name")+"Ã”Õ—¡À£°\n");
+		return 1;
+	}
+	if(environment(me) == this_object())
+	{
+        message_vision("∫ˆ»ª“ª»∫≤∂øÏ≥Â¡Àπ˝¿¥£¨∂˛ª∞≤ªÀµæÕΩ´$NÓÌ◊ﬂ¡À°£\n",target);
+        target->move(this_object());
+        message_vision("$N±ªπŸ±¯—∫¡ÀΩ¯¿¥°£\n",target);
+	if(me){
+	me->kill_ob(target);
+	target->kill_ob(me);
+	target->start_busy(3);
+		}
+        return 1;
+	}
+	return 1;
+}
+
+valid_leave(object me,string dir)
+{
+	object xing;
+	
+	if((dir =="south" || dir == "west") && me->query("class")!="official"
+		&&xing=present("xing rui",this_object()))
+		return notify_fail("–œ»Ò∂‘ƒ„∫»µ¿£∫°∞≤ªµ√…√¥≥ª˙“™÷ÿµÿ£°£°°±\n");
+	return 1;
+}
+
+
+void reset(){
+	object *inv, *npc;
+	int num, i;
+	string id;
+	inv = all_inventory(this_object());
+	npc = filter_array(inv,(: living($1) && !userp($1):));
+	num = sizeof(npc);
+	for (i=0; i<num; i++) {
+		id = npc[i]->query("id");
+		if ( npc[i]->is_corpse() || id =="yayi"
+			|| id=="chaiyi" ||  id == "xing rui"
+			|| !npc[i]->query("startroom")) continue;
+//		npc[i]->ccommand("say »¯”–ƒ…¿≠£°£°");
+		npc[i]->return_home(npc[i]->query("startroom"));
+	}
+	:: reset();
+}
+
+*/		

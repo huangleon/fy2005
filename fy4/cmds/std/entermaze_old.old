@@ -1,0 +1,146 @@
+
+#include <ansi.h>
+inherit F_CLEAN_UP;
+
+int main(object me, string arg)
+{
+	object room,room2,who,*mem;
+	int pwd, i, j,count, max_exp, combatexp;
+	string name; 
+
+	seteuid(getuid());
+	
+	// This is the primary quest owner 
+	if (me->query("private_maze/destination") == base_name(environment(me))+".c"
+		 && me->query("quest/quest")== "´¹óÒÀÏÉ®µÄÈÎÎñ"
+		 && me->query("private_maze/create")) {
+		
+		me->set("private_maze/create",0);	// ÒòÎªÔÚÏú»Ù£í£á£ú£åÊ±ÎÒÃÇÔÊÐíownerÍË³ö£¬ËùÒÔ±ØÐëÏÞÖÆcreateµÄ´ÎÊý£®
+		
+		room2 = find_object("/obj/dungeon/standardmaze/"+me->query("id")+"/entry");
+		if (!room2)
+			room2=load_object("/obj/dungeon/standardmaze/"+me->query("id")+"/entry");
+		if (!room2)	
+			room2="/obj/dungeon/standardmaze"->query_maze_room(me->query("id")+"/entry");
+		if (!room2) {
+			write("Oops.Please report to wizards. \n");	
+			return 1;
+		}
+		// If it's the first time, prepare the instance parameters for other people's entry.
+		if (!room2->query("maze/pwd"))	{
+			
+			// Maze_exp ¾ö¶¨ÓÚ¶ÓÎéÖÐ×î¸ßµÄ¾­ÑéÖµ£¬ÕâÑù¶ÓÎéÖÐµÄÈË¿Ï¶¨ÄÜ°ïÃ¦
+			mem = pointerp(me->query_team()) ? me->query_team() : ({ me });
+    		j = sizeof (mem);
+    		while (j--)	{
+				if (mem[j]) {
+		    		max_exp = mem[j]->query("combat_exp");
+		    		if (max_exp > 15000000) max_exp = 15000000;
+		    		combatexp = (max_exp>combatexp) ? max_exp : combatexp;
+				}
+    		}
+			room2->set("maze/exp", 	combatexp); 			
+
+			room2->set("maze/type", me->query("private_maze/type"));
+			room2->set("maze/exit", me->query("private_maze/destination"));
+			room2->set("maze/name", me->query("private_maze/orig_name"));
+			room2->set("maze/sig",	me->query("private_maze/maze"));
+
+					room2->query("maze/sig")->set_link_exit_room(room2->query("maze/exit"));
+					room2->query("maze/sig")->set_link_entry_room(room2->query("maze/exit"));
+
+			room2->set("maze/boss",		"/obj/dungeon/boss");	
+			room2->set("maze/blocker",	"/obj/dungeon/blocker");	
+			room2->set("maze/npc_pfm_chance", me->query("private_maze/difficulty"));
+						
+		}
+		// Owner can change password  anytime he enters
+		if (arg)	pwd = atoi(arg);
+		if (!pwd)	pwd = 123;
+		room2->set("maze/pwd", pwd);
+		
+		count = sizeof(room2->get_players());
+		if (count >= room2->query("maze/type"))
+			return notify_fail("´ËÈÎÎñÉõÎª»úÃÜ£¬²»ÒËÈË¶à£¬ÒÑ²»ÄÜÔÙ½øÈëÁË¡£\n");
+		
+//		me->set_temp("maze_entry",environment(me));	
+				
+		me->move(room2);
+		write(WHT"\n½øÈë´¹óÒÀÏÈËµÄÈÎÎñÇøÓò£º" + me->query("private_maze/orig_name")+ "£¬Èë¿ÚÃÜÂëÉèÎª"+ pwd +"¡£\n"NOR);
+		return 1;	
+	}
+	
+	// Following is for other ppl's entry
+	
+	if (!arg || sscanf(arg, "%s %d", name, pwd)!= 2)
+		return notify_fail("½øÈëÈÎÎñÇøµÄÃüÁî¸ñÊ½Îª entermaze ÈÎÎñ³ÖÓÐÕßÓ¢ÎÄÃû ÃÜÂë£¬±ÈÈç entermaze abcd 249 \n");
+		
+	if (!name || !pwd)
+		return notify_fail("½øÈëÈÎÎñÇøµÄÃüÁî¸ñÊ½Îª entermaze ÈÎÎñ³ÖÓÐÕßÓ¢ÎÄÃû ÃÜÂë£¬±ÈÈç entermaze abcd 249 \n");
+		
+	room2 = find_object("/obj/dungeon/standardmaze/"+name+"/entry");
+	if (!room2)
+		return notify_fail("´ËµØÃ»ÓÐÄãÖ¸¶¨¶ÔÏóµÄÈÎÎñÇø¡£\n");
+		
+	if (!room2->query("maze/pwd"))
+		return notify_fail("ÈÎÎñÇøÐèÒª½Óµ½ÈÎÎñÕßÊ×ÏÈ½øÈë¡£\n");
+		
+	if (room2->query("maze/pwd") != pwd)
+		return notify_fail("ÄãµÄÃÜÂë²»¶Ô£¬ÎÞ·¨½øÈëÖ¸¶¨¶ÔÏóµÄÈÎÎñÇø¡£\n");
+		
+	if (F_LEVEL->get_level(me->query("combat_exp")) > F_LEVEL->get_level(room2->query("maze/exp")) +5)
+		return notify_fail("½øÈë¸ÃÈÎÎñÇøµÄ×î¸ßµÈ¼¶²»ÄÜ³¬¹ý"+ (F_LEVEL->get_level(room2->query("maze/exp"))+5)+"¡£\n");
+	
+	count = sizeof(room2->get_players());
+	
+	if (count >= room2->query("maze/type"))
+		return notify_fail("´ËÈÎÎñÉõÎª»úÃÜ£¬²»ÒËÈË¶à£¬ÒÑ²»ÄÜÔÙ½øÈëÁË¡£\n");
+		
+	me->set_temp("maze_entry",environment(me));	
+	me->move(room2);
+	
+	write(WHT"\nË³Àû½øÈë"+ room2->query("mark_ob") + "µÄ£º" + room2->query("maze/name")+ "£¬ÄãµÄÈÎÎñÊÇ³¹µ×´Ý»ÙÕâÀï¡£\n"NOR);
+	return 1;
+}
+
+int help (object me)
+{
+	write(@HELP
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+[1;36m		entermaze [name] [password]	
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m   
+ 
+¸ÃÃüÁî¿É½øÈë½øÈë×Ô¼º»òËûÈËµÄÈÎÎñÇøÓò
+¸ÃÈÎÎñÓÉ·çÔÆ³ÇÚòÃíµÄ´¹óÒÀÏÈË¸ø³ö
+½Óµ½ÈÎÎñºóÑ°ÕÒµ½Ïà¹ØµØµã£¬Ê¹ÓÃ¸ÃÃüÁîºó±ãÄÜ½øÈëÒ»¸ö¶ÀÁ¢µÄÇøÓò
+
+¶ÔÓÚ³ÖÓÐÈÎÎñÕßÀ´Ëµ£¬Ö»ÐèÊäÈë entermaze ±ãÄÜ½øÈë
+
+²»Í¬µÄÈÎÎñÇø¿ÉÄÜÓÐ²»Í¬µÄÈËÊýÏÞÖÆ£¬ÔÚ¸ø³öÈÎÎñÊ±»áÓÐÏà¹ØËµÃ÷¡£
+ÈËÊýÉÏÏÞ¸ßµÄ£¬ÄÑ¶È¾Í»á´óÒ»Ð©£¬×ÔÈ»½±ÀøÒ²¸ü¸ß¡£
+
+Èç¹ûÄã¾õµÃÈÎÎñÌ«ÄÑ£¬Ïë½ÐÉÏÐ©ÅóÓÑÀ´ÖúÕó£¬ÄÇÃ´Äã¾ÍÒªÉèÒ»¸ö½øÈë
+´ËµØµÄÃÜÂë£¬ÃüÁîÎª entermaze password
+±ÈÈçËµ entermaze 890 ±ãÊÇÉè¶¨ÃÜÂëÎª 890
+£¨Èç¹ûÄã²»Éè¶¨£¬ÔòÏµÍ³×Ô¶¯¶¨Îª123£¬Ò²¾ÍÊÇËµ£¬Èç¹ûÄã½ö½öÓÃÁË²»
+´ø²ÎÊýµÄentermazeÃüÁî£¬ÆäËûÈË¿ÉÓÃÃÜÂë123½øÈë£©
+
+½ÐÀ´µÄ°ïÊÖ½øÈë¸ÃÈÎÎñÇøµÄÃüÁîÎª entermaze name password
+ÆäÖÐnameÎªÈÎÎñ³ÖÓÐÕßµÄÓ¢ÎÄÃû£¬passwordÎªÈËÎï³ÖÓÐÕßÉè¶¨µÄÃÜÂë¡£
+
+Íê³ÉÈÎÎñºó£¬½±Àø½«ÓÉµ±Ê±´¦ÔÚ¸ÃÈÎÎñÇøµÄËùÓÐÈË·ÖÏí¡£
+
+´ËÈÎÎñÃ»ÓÐ×é¶ÓÏÞÖÆ£¬Ö»ÒªÖªµÀÃÜÂë£¬¼´Ê¹²»ÔÚ¶ÓÎéÖÐµÄ£¬Ö»Òª¾­ÑéµÈ
+¼¶²»ÊÇÏÔÖø¸ßÓÚ¶ÓÎé£¬Ò²ÄÜ½øÈë¡£Ò²¾ÍÊÇËµ£¬¼´Ê¹ÄãÊÇÔÚµ¥¸É£¬Èç¹û·¢
+ÏÖÌ«ÄÑ£¬¿ÉÒÔËæÊ±À­¸öÅóÓÑÀ´°ïÃ¦¡£
+
+ÈÎÎñÇøÒ»°ã´æÔÚ£±£µ£­£³£°·ÖÖÓ£¬Ê±¼äµ½»òÕßÍê³Éºó×Ô¶¯Ïú»Ù£¬Ïú»ÙÊ±
+ËùÓÐÈË¡¢Ê¬ÌåÒÆ¶¯µ½Èë¿Ú·¿¼ä¡£
+
+
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m    
+HELP
+	);
+	return 1;
+}
+

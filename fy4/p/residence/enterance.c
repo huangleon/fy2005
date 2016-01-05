@@ -1,0 +1,83 @@
+#include <ansi.h>
+
+
+inherit ROOM;
+void create ()
+{
+  set ("short", CYN"¡¾"WHT"ÕíÏ¼Ö®³Ç"CYN"¡¿"NOR);
+  set("name","ÕíÏ¼Ö®³Ç");
+  set("id","Residence Area");
+  set("channel_id","ÕíÏ¼Ö®³Ç(Residence Area)");
+  
+  set ("long", @LONG
+ÅÀÉÏÌìÌÝ£¬Ò»ÕóÕóÎ¢º®µÄ·çÇã·÷¶ø¹ý£¬Ì§ÑÛÊÇÂþÌìµÄÐÇ¹â£¬ÔÂÔ²£¬ËÄÖÜ¶¼ÊÇÏô
+ÏôµÄÑ©¡£¼¸ÌõÐ¡Â·¶«ÄÏÎ÷±±µÄÑÓÉì¿ªÀ´£¬Í¨ÏòÔ¶·½ÂÔ¸ßµÄ¼¸¿éÍÁµØ£¬È»¶øÐ¡Â·ÏÂµÄ
+±¡ÍÁÖ»µÃÈý³ßÐíºñ£¬¾¹ÊÇÐü¿Õ²»Âä¡£²»Ô¶´¦µÄÑ©µØ±ßÔµ²å×ÅÃæÄ¾ÅÆ[37m(Sign)[32m£¬Äã×ßÈ¥
+·ö×ÅÄ¾ÅÆ´¹Íû£¬Ö»¼û°ÙÕÉÖ®ÏÂ£¬ÒÀÏ¡ÊÇ·çÔÆ³ÇÖÐÉÁË¸µÄµÆ»ð¡£
+LONG);
+        set("exits", ([ 
+  "north" : __DIR__"smile1",
+  "east" : __DIR__"tower1",
+  "west" : __DIR__"sword1",
+  "south" : __DIR__"cloud1",
+//  "northeast" : __DIR__"moon1",
+//  "northwest" : __DIR__"star1",
+//  "southeast" : __DIR__"surge1",
+//  "southwest" : __DIR__"cape1",
+//  "down" : __DIR__"station",
+  "down" : "/d/fy/station",
+
+  "up" : __DIR__"annieshop",
+]));
+	set("item_desc", ([
+			"sign": @LONG
+
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨X¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¨[
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©®¡¡¡¡¡¡¡¡¡¡»¶Ó­À´µ½ÕíÏ¼Ö®³Ç¡¡¡¡¡¡¡¡¡¡©¦
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©®¡¡¡¡¡¡ ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡¡¡¡¡¡©¦
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©®¡¡¡¡¡¡ ¾à·çÔÆÌìÏÂÒ»°ÙËÄÊ®ËÄÕÉ ¡¡¡¡¡¡©¦
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨^¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¨a
+
+LONG
+	]) );
+  	set("coor/x",-20);
+	set("coor/y",-40);
+	set("coor/z",10);
+	set("NONPC",1);
+	setup();
+}
+
+
+void process()
+{
+	BR_D->process();
+	call_out("remove_x",43200);	// 12hr
+}
+
+void remove_x()
+{
+	set("ann",0);
+}
+
+void init()
+{
+	if (!query("ann"))
+	{
+		set("ann",1);
+        CHANNEL_D->do_channel( this_object(), "announce",sprintf(NOR YEL"ïLë…³ÌÊ½Œ¢ÔÚÒ»·ÖçŠááŒ¦×¡Õ¬…^ßMÐÐ™zË÷ÇåÀí£¬ÆÚég¿ÉÄÜÓÐLAGÇéÊÂ£¬"NOR));
+        CHANNEL_D->do_channel( this_object(), "announce",sprintf(NOR YEL"Õˆ±M¿ìëxé_Î£ëU…^Óò•º•rµÈ´ý£¬ÒÔ×o°²È«¡£"NOR));
+		call_out("process",1);
+	}
+}
+
+/*
+ 
+               (\~~~/)            
+               ( £®£®)        
+
+               (_____)~£®      
+   
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡- FengYun - ¡¡¡¡¡¡
+¡¡¡¡¡¡¡¡¡¡¡¡annie 10.2003
+¡¡¡¡¡¡dancing_faery@hotmail.com
+*/

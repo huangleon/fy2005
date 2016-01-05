@@ -1,0 +1,9 @@
+#/obj/user.c
+pawn ([])
+vpawn ([])
+fpawn ([])
+dbase (["con":15,"spi":10,"national":"ÃÉ¹Å×å","per":7,"cps":10,"kar":10,"FINISH_QUEST":9,"title":"³¯Í¢Ãü¹Ù ×¼±¸½«","birthday":1263916410,"score":210,"class":"official","level":1,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"food":0,"cor":10,"update":(["11_tianfeng_1":1,"11_music":1,"11_starrain":1,"11_lingxi-zhi":1,"11_wuche-axe":1,"11_fumostaff":1,"11_duanhun-spear":1,"11_liuxing-hammer":1,"11_task_ability":1,"11_bai-quan":1,"11_ability":1,]),"name":"Ğ¡ºú×Ó","gender":"ÄĞĞÔ","water":0,"deposit":0,"potential":1750,"nickname":"[1;36mÇàÌì[1;37m°×ÈÕ[1;31mÂúµØºì[2;37;0m","timer":(["quest_cancel":1263963284,]),"marks":(["delivery_success":1,]),"eff_kee":320,"family":(["title":"×¼±¸½«","master_id":"master lu","enter_time":1263921384,"master_name":"Â¬¶¨¹Ø","family_name":"³¯Í¢Ãü¹Ù","generation":8,"privs":0,]),"vendetta_mark":"authority","max_kee":479,"gin":250,"race":"ÈËÀà","eff_gin":251,"force":198,"max_gin":266,"env":(["target":"yahuan","wimpy":50,"targer":"yahuan","equip_msg":2,"brief3":"YES",]),"combat_exp":12096,"eff_sen":249,"achieved_level":1,"mana":110,"max_sen":266,"quest_time":1263963402,"used_gift_points":10,"sen":165,"learned_points":1,"max_force":99,"actions":,"max_mana":55,"m_success":(["ĞÂÊÖÈëÃÅ":1,"ÇÉÈëÍòÃ·":1,]),"age":10,"annie":(["skill_cost":(["literate":1,]),"¹ÅËÉÇÙ":1,]),"quest":0,"atman":110,"NO_PK":1,"default_actions":,"max_atman":55,"riddle":([]),"id":"xhuzi","kee":263,"gift_points":10,"distribute":(["con":5,"str":5,]),"startroom":"/d/fy/fqkhotel","mud_age":18815,"tol":10,"fle":10,"agi":10,"dur":10,"once_menpai":(["official":1,]),"int":10,"str":15,])
+skills (["spells":10,"force":18,"literate":18,"magic":10,])
+learned (["force":0,"literate":0,])
+items ([])
+autoload ({})

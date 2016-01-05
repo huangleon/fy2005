@@ -1,0 +1,37 @@
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+		[0;1;36m·çÔÆ2005»ù±¾Ö¸Áî[0m
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m   
+
+[37m×´Ì¬ÐÅÏ¢Ö¸Áî[0m
+        Hp            	²ì¿´×ÔÉíÆøÑª¡¢¾­ÑéÇ±ÄÜµÈ×´Ì¬ÐÅÏ¢
+        Score          	²ì¿´×ÔÉíÈËÎïÊôÐÔ£¬¹¥·ÀÐÅÏ¢
+        Inventory     	²ì¿´ËùÐ¯´øºÍ×°±¸µÄÎïÆ·£¬¼òÐ´ i
+        Skills         	²ì¿´×Ô¼ºÑ§¹ýµÄÎä¹¦¼¼ÄÜ
+        Enable         	²ì¿´×Ô¼ºÕýÔÚÊ¹ÓÃµÄÎä¹¦¼¼ÄÜ
+	Stat		²ì¿´µ±Ç°µÄÒì³£×´Ì¬£¨ÖÐ¶¾¡¢ÌØ¼¼µÈ£©
+	Riddle		²ì¿´½âÃÕ½ø³Ì			
+
+[37m»ù±¾¶¯×÷Ö¸Áî[0m
+	Go              ÐÐ×ßÖ¸Áî£¨South/North/East/West£©
+	Map             ÁÐ³öµ±Ç°ËùÔÚÇøÓòµÄµØÍ¼
+        Get            	´ÓÄ³´¦»òÄ³ÈÝÆ÷ÖÐÈ¡³öÎïÆ·
+        Give           	¸øÄ³ÈËÄ³ÎïÆ·
+        Put             °ÑÄ³Îï·ÅÖÃµ½Ä³´¦
+        Drop            ¶ªÆúÄ³Îï
+        Open/Close      ´ò¿ª/¹Ø±Õ·¿ÃÅ»òÈÝÆ÷
+	Eat/Drink       ÒûÓÃÊ³ÎïË®Ô´
+	Fill:		ÔÚË®Ô´´¦½«ÈÝÆ÷Ê¢ÂúË®
+
+[37m³£ÓÃÈÎÎñÖ¸Áî[0m
+	Task            ÁË½âTASK·Ö²¼Çé¿ö
+        Quest           ÁË½â×Ô¼º»ò¶ÓÓÑµÄQuestÇé¿ö
+        Quest Cancel	Á¢¼´È¡Ïûµ±Ç°Quest
+        Quest Fail	·ÅÆúµ±Ç°Quest
+        Delivery        ÁË½âËÍ»¨ÈÎÎñµÄÇé¿ö
+        Locate	letter	È·¶¨ÐÅ¼þ·½Î»£¨Ñ°ÐÅQuest£©
+        Entermaze	ÔÚÌØ¶¨µØÇø½øÈëQuest·¿¼ä       
+
+[0;1;31m¾ßÌåÖ¸ÁîµÄ¸ñÊ½¡¢Ó¦ÓÃ·½·¨¿ÉÊ¹ÓÃHelpÃüÁî
+ÀýÈç£º	help score	¾Í»á¸ø³öscoreÖ¸ÁîµÄÏêÏ¸ËµÃ÷[0m
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m   
+		°´ÈÎÒâ¼ü·µ»ØÉÏ¼¶²Ëµ¥

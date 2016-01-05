@@ -1,0 +1,56 @@
+
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+                        [0;1;36m»·¾³±äÊý[0m
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m 
+
+Äã¿ÉÒÔÓÃ set Ö¸ÁîÉè¶¨Ò»Ð©ÓÐÓÃµÄ»·¾³±äÊý£¬ÕâÐ©±äÊýÒ²»áËæÖøÄãµÄÈËÎï±»´¢
+´æÏÂÀ´£¬Èç¹ûÓÐ²»ÐèÒªµÄ»·¾³±äÊý£¬¿ÉÒÔÓÃ unset É¾³ý¡£
+ÏêÏ¸µÄÊ¹ÓÃ·½·¨Çë¿´ help set ¼° help unset¡£
+
+ÒÔÏÂÊÇÄ¿Ç°ÓÐÓÃµÄ»·¾³±äÊý£º
+
+brief		<ÈÎºÎ·ÇÁãµÄÖµ>	ÒÆ¶¯Ê±Ö»¿´ËùÔÚµØ¼ò¶ÌµÄÃû³Æ£¬Èç¹ûÄúµÄÍø
+				Â·ËÙ¶È²»ÊÇºÜ¿ì£¬»òÕßÊÇ¶ÔÇøÓòÒÑ¾­Ê®·ÖÊì
+				Ï¤£¬½¨ÒéÄú´ò¿ª briefÒÔ¼õÇáÍøÂ·¸ºµ£¡£
+brief2				ÒÆ¶¯Ê±Ö»¿´ËùÔÚµØ¼ò¶ÌµÄÃû³ÆºÍÈËºÍÎï¡£
+brief3				ÒÆ¶¯Ê±Ö»¿´ËùÔÚµØ¼ò¶ÌµÄÃû³ÆºÍÈËÎï¼°³ö¿Ú¡£
+				
+wimpy		<°Ù·Ö±È>	µ±ÄúµÄ¾«ÆøÉñµÍì¶Õâ¸ö°Ù·Ö±ÈÊ±¾Í»á×Ô¶¯Ö´
+				ÐÐsavemyassËùÖ¸¶¨µÄÃüÁî¡£Èç¹ûsavemyass
+savemyass	<ÈÎºÎÖ¸Áî>	Ã»ÓÐÉèÖÃ£¬Ôò×Ô¶¯ÈÃÄã³¢ÊÔÌÓÀëµ±Ç°Î»ÖÃ¡£
+				
+no_teach 	<ÈÎºÎ·ÇÁãµÄÖµ>	Éè¶¨ÄãÏÖÔÚ²»½ÌÄãµÄÍ½µÜ¼¼ÄÜ£¬ÓÉì¶½ÌÍ½µÜ
+				Òª»¨·ÑÒ»Ð©¾«Éñ£¬µ±Í½µÜ²»¹ÔµÄÊ±ºò....¡£
+
+no_tell		<id/all>	Ê¹Íæ¼Ò£¨id£©»òËùÓÐÍæ¼Ò£¨all£©¶¼ÎÞ·¨ºÍÄã
+				Ëµ»°¡£
+
+no_give         <1 »ò 0>	Èç¹ûÊÇ1£¬½«²»½ÓÊÜÈÎºÎÀ´×ÔÓÚÆäËûÍæ¼ÒµÄÍâ
+				À´ÎïÆ·¡£È±Ê¡ÖµÎª0¡£				
+				
+revive          <1 »òÕß 0>      Èç¹ûÊÇ1£¬ËûÈË¿É¶ÔÄãÊ©ÐÄÊ¶ÉñÍ¨£¬Èç¹ûÊÇ0
+				Ôò²»ÄÜ¡£È±Ê¡ÉèÖÃÎª0¡£»Ö¸´ºóÉèÖÃÎª£°¡£
+	
+equip_msg 	<1£¬2 »òÕß 3>	´ËÖ¸ÁîµÄÄ¿µÄÊÇÎªÁË¼õÉÙÆµ·±µÄ´©´÷ÍÑÐ¶Ë¢
+				ÆÁ¡£Èç¹ûÉèÎª£±£¬Äã½«¿´²»µ½×Ô¼º×°±¸£¯È¥
+				³ýÎäÆ÷×°±¸µÄÐÅÏ¢£»Èç¹ûÊÇ£²£¬Äã½«¿´²»µ½
+				±ðÈË×°±¸£¯È¥³ýÎäÆ÷×°±¸µÄÐÅÏ¢£»Èç¹ûÊÇ3£¬
+				ÔòÁ½¸ö¶¼¿´²»µ½¡£Îª½ÚÊ¡ÏµÍ³×ÊÔ´£¬ÐÂÈËµÇ
+				Â½Ê±×Ô¶¯ÉèÎª2¡£
+
+savemymoney     <1 »ò 0>        Èç¹ûÊÇ1£¬É±Ìì½¾µÄ½±Àø½«Ö±½Ó´æÈëÄãµÄ
+                                ÒøÐÐÕËºÅ¡£      
+				
+ability		<1 »ò £°¡µ¡¡¡¡	Èç¹ûÊÇ£±£¬£Ñ£õ£å£ó£ô½±Àø½«²»ÔÙÌá¸ß¾­Ñé
+				Öµ£¬¶ø×ªÈëÄÜÁ¦µãµÄ»ýÀÛ¡£	
+
+e_money		<1 »ò £°¡µ	Èç¹ûÊÇ1£¬Ôò¿ÉÒÔÖ±½Ó´ÓÒøÐÐ×ªÕË£¨¸Ã¹¦ÄÜ
+				Ö»ÓÐÔÚ¼¤»îËÄº£½ð¿¨ºó²ÅÄÜÊ¹ÓÃ£©
+
+target		<id>		ÔÚ¹¥»÷ÖÐÉè¶¨¹¥»÷¶ÔÏó£¬Éè¶¨ºóÎÞÂÛÊÇÆÕÍ¨
+				¹¥»÷»¹ÊÇÌØ¼¼Ê¹ÓÃ£¬¸Ã¶ÔÏó½«±»ÓÅÏÈÑ¡Ôñ
+
+dmg_msg		<1 »ò 0>	Èç¹ûÊÇ1£¬ÏµÍ³½«Êä³öÒ»ÏµÁÐ×´Ì¬ÐÅÏ¢£¬´Ë²Î
+				ÊýÊÇÎªÁË·½±ãÔÚ¿Í»§¶ËÉèÁ¢¸÷Ïî×´Ì¬¡£
+															
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m

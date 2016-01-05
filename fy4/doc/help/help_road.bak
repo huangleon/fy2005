@@ -1,0 +1,89 @@
+
+
+
+
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+    	           [0;1;36m·çÔÆ£²£°£°£µ¸÷µØµÄ½ø·¨[0m
+ 
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+
+ÌÒÔ´´å
+from tj 10e3s4e ÔÚÉ½¹ÈÖÐaroundÖ±ÖÁÕÒµ½ÍÃ×Ó£¬Ò»Ö±catch rabbit£¬ÍÃ×Ó²»¼û×ÙÓ°ºó£¬listen ,se ³öÀ´push door,nw ¼´¿É
+
+µØÓü
+·çÔÆ³ÇÎ÷±ßµÄ½¹¶¼æäÂíÀÏËÄÄÇÀïdash;get pumpkin;eat pumpkin dash ¼´¿É
+
+Ç§½ðÂ¥
+´Ó·çÔÆ³Ç£º¸ø¹êÅ«20silver£¬µ«ÊÇ²»ÄÜ´øÈÎºÎ¶«Î÷½øÈ¥,½¨Òé´ÓÍòÃ·É½×¯µÄºóÉ½ÆÂswim
+
+ÍòÃ·É½×¯
+µ½µ±ÆÌÂò¸ö¹ÅËÉÇÙ»òÕßµ½ÐË¹úÔÆÁ÷ÄÇÀïask yunliu about qin£¬play qin¾Í¿ÉÒÔ½øÈ¥
+
+¸»¹óÉ½×¯
+ÁÙÊ±mark£º¸øºìÂìÒÏ·¼¶ùÄÇÀïÂòµÄëÙÖ¬£¬¸ø°×ÂìÒÏ·çÔÆÂí¹Ó£¬¸øÒøÂìÒÏÉáÀû×Ó£¬¸ø½ðÂìÒÏÄý±Ì½££¨task£©
+ÓÀ¾Ãmark£º¸øºìÂìÒÏ¿üÔª¹Ý»ï¼ÆÄÇÀï1gold»»µÄÆÆÍß¹Þ£¬¸ø°×ÂìÒÏÌúÑ©É½×¯µÄÇï·ç²½·¨ÃØóÅ£¬¸øÒøÂìÒÏÌìóÃ·ðÖé£¬¸ø½ðÂìÒÏ´óÆì¹ÈµÄ³¤Éú½£
+
+ÌúÑ©É½×¯
+¹ØÍâ³ÇÃÅnu µÚÈý¸öÑò³¦Ð¡µÀÄÇÀïpushaside grass£¬½øÈ¥ºóÔÚÐ¡ÇÅÁ÷Ë®ÄÇÀïlistenºó²ÅÄÜ¹ýÀÏÕÅ
+
+ÓÄÁéÉ½×¯
+¹ØÍâ³ÇÃÅ#5 s n e eÓöµ½¹Â¶ÀÃÀagree to helpÈ»ºó°´ËûËµµÄ×ß£¬»áÓöµ½Ò¶¹Âºè£¬·ÛÑà×ÓÌøÏÂÀ´ºóleave gu du mei s£¬³öÁËÃÔ¹¬ºóget pipe from rock£¬blow pipe£¬e£¬accept test£¬tell ghost no face£¬Èç¹ûÔÚÃÔ¹¬ÃÔÂ·ÁËs n e e¿ÉÒÔÕÒµ½¹Â¶ÀÃÀ
+
+ÀÇÉ½
+¸øfighter wolf¿¾Ò°ÍÃÈâ£¬Ò°ÍÃÔÚ»ÆÉ½Á«Èï·å¡¢Ì©É½´ó¹Û·å¡¢áÔÉ½Á«»¨ËÂ¶¼ÓÐ
+ÀÇÉ½ºóÉ½½ø·¨:ÔÚÁø½ðÁ«ÄÇÀïswim;kill xiaorou ,xiaoling or xiaobu get Æß²Êº£ÂÝ blow shell need.enforce 40;µ½Ð¡ÖÛcharge center;
+
+ÉÙÁÖËÂ
+´©ÉÙÁÖÉ®ÒÂ»òÕß¸øÎ÷Ò´ÃÅµÄºÍÉÐ20 silver£¬Èç¹û½âÁËÊØ¾­Â¥£¬¿ÉÒÔÔÚÎ÷Ò´ÃÅÓÃkeychain
+
+°×ÔÆµº
+ÄÏº£´¬ÐÐ¸øÀÏÕÆ¹ñ5 silver£¬Èç¹û¼¤»îÁËËÄº£½ð¿¨£¬ask zhanggui about boat£¬È»ºó°ÑµÃµ½µÄÆõÔ¼¸øÄÏº£ÂëÍ·µÄÀÏºüÀê£¬ÉÏ´¬ºósail south¡£ÔÚ°×ÔÆµºÂëÍ·yell¿ÉÒÔ»ØÀ´
+
+À¥ÂØÉ½°×ÔÆÉ½×¯
+´ÓÀ¥ÂØÉ½¶«µÄÆÆÂí³µÖÐÄÃÑü¹ÄºÍÐ¡ºÅ£¬µ½É½×¯ÃÅ¿Úplay
+
+ÏàË¼Áë
+ÔÚ³à·åÂ·£¬µÚÒ»´Î½øÒªÔÚ×ÓÊ±»òÎçÊ±£¬unwield all,#3 w,#4 e£¬ÒÔºó½ø¾Í²»ÒªÔÚ×ÓÊ±»òÎçÊ±½øÁË
+
+Ã÷Ï¼É½
+ÔÚÃÔÃ£·çÓêÂ·£¬ÓÐ¡°ÔÆÎíÃÖÂþ£¬±±ÃæµÄÎíÆøËÆºõÔÚÇáÇáÁ÷¶¯¡£¡±ÌáÊ¾Ê±n£¬Èç¹ûÃ»ÓÐ³öÏÖÌáÊ¾¾ÍÀ´»Ø×ß¼¸´Î¡£
+
+ºÚËÉÉ½
+É½½ÅÏçÌïºÍÐ¡¾êtalk£¬È»ºóÔÚºÚËÉ³Ç±¤µÄÎ÷²àclimb wall
+
+¶ö»¢¸Ú
+µ½ÀÏÉ½¶«ÄÇÀïÂòÖ»ÉÕ¼¦£¬È»ºóÉ±ÁËÀÏÉ½¶«£¬´©ÉÏËûµÄÃæ¾ßºÍÒÂ·þ£¬¸øÃÅ¿ÚµÄà¶†ªÉÕ¼¦¾Í¿ÉÒÔ½øÈ¥ÁË£¬Èç¹ûÓÐkeychainµÚ¶þ´Î½øÈ¥¿ÉÒÔÓÃkeychain
+
+´óÆì¹È
+ask ¾ÆÈâºÍÉÐ about meat£¬È»ºóopen door;s;pull Ð¡¹ñ£¬Òõ±öÀë¿ªºóask xiaofan about leaf;give xiaofan 10 silverµÃµ½Ê÷Ò¶£¬½Ó×Åµ½Î£ÑÂÇ°(from tj 11 e;#3 eu;;sd;e;ed;n; west) w,¼ûµ½Òõ±öÒÔºóask yin bin about man¼ûµ½ÖìÔå¡£È»ºóremove all;ask zhu zao about test£¬³öÈ¥µÄ·½·¨go cyan;open hua;s»Øµ½yin binÄÇÀï¡£
+
+³£´ºµº
+¶«º£±ÌÀ¶º£±ß{#11 e;#3 eu;sd;e;ed;n;#4 e;s}blow pipe ×ø´¬¾Í¿ÉÒÔµ½
+
+á·Ãí
+ÔÚ½ð»¤ÎÀÄÇÀïl picture£¬¸ù¾ÝÍ¼»­À´ÅÐ¶Ï½øá·ÃíµÄ¿ÚÁî£¬¼ûÌ©É½°Ë¾°
+
+ÐË¹úìøËÂ
+ÎåÐÐÍ­ÈËÐèÒª50ÄÚÁ¦ touch mark;ÃÖÀÕµî #5smile;n;½øºóÔºÐèÒªÔÚÏã»ý³øpush luowang;n; ´ÓºóÔº³öÀ´ ÔÚ×ó²àµÄ³¤ÀÈ push button;s;
+
+¶ñÈË¹È
+ÔÚÀ¥ÂØÉ½µÄÉ½µÀÉÏl stone£¬°´ÌáÊ¾½øÈë
+
+¿ì»îÁÖ
+¶ÔÓÚÐÂÊÖÀ´Ëµ£¬½â¿×È¸¿ªÆÁ´Óº«ÁæÄÇÀï½øÈ¥£¬½âÁË¾ÆÉ«²ÆÆøºó¾Í¿ÉÒÔËæÒâ½øÈë
+
+µØÏÂ³Ç
+½âÓÂÌ½µØÀÎ£¬µØÏÂ³ÇÓÐÁ½¸öÈë¿Ú£¬Ò»¸öÔÚ°²Éú¹×²Äµêpush coffin£¬Ò»¸öÔÚ³Ç±±Ð¡Â· l grass,stamp grass, ³öÀ´Òªl ring,pull ring
+
+òùòðµº
+¶«º£±ß¹àÄ¾ÁÖdash bush,ask wei xing long about book,fight wei xing long,ask master chu about bianfudao,give book to ding feng£¬Èç¹ûÓÐkeychain¿ÉÒÔÔÚ¶¡·ãÄÇÀïÓÃkeychain£¬²»ÓÃÔÙ¸øbook
+
+Îäµ±ºóÔº
+×öÒ»¸öÅí³¤¾»£¨Peng£©µÄÃæ¾ß¾Í¿ÉÒÔ½øÈ¥ÁË£¬²»ÐèÒªÉ±Åí³¤¾»
+
+ÍòÂíÌÃ
+½âÃûÑï±ß³Ç
+   	
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+                    [36m°´ÆäËû¼üÍË³ö[0m
+[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
